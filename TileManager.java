@@ -4,9 +4,6 @@ import java.awt.*;
 class TileManager {
     private ArrayList<Tile> tileList = new ArrayList<Tile>();
     private Tile save;
-    public static void main(String[] args){
-        
-    }
 
     public void addTile(Tile rect){
         tileList.add(rect);
