@@ -27,7 +27,6 @@ class TileManager {
                 return;
             }
         }
-        return;
     }
 
     public void lower(int x, int y){
@@ -39,8 +38,7 @@ class TileManager {
                 
                 return;
             }
-        }
-        return;
+        }  
     }
 
     public void delete (int x, int y){
@@ -49,8 +47,7 @@ class TileManager {
                 tileList.remove(i);
                 return;
             }
-        }
-        return;
+        }       
     }
 
     public void deleteAll(int x, int y){
@@ -58,8 +55,7 @@ class TileManager {
             if (isTouching(x, y, tileList.get(i)) == true){
                 tileList.remove(i);
             }
-        }
-        return;
+        }  
     }
 
     public void shuffle(int width, int height){
@@ -67,25 +63,26 @@ class TileManager {
         int random;
         while (tileList.size() > 0){
             random = (int) Math.random() * (tileList.size() + 1);
-            tileList.get(random).setX((Math.random() * (double)(300 - tileList.get(random).getWidth())));
-            tileList.get(random).setY((Math.random() * (double)(300 - tileList.get(random).getHeight())));
+            tileList.get(random).setX((Math.random() * 
+            (double)(300 - tileList.get(random).getWidth())));
+            tileList.get(random).setY((Math.random() * 
+            (double)(300 - tileList.get(random).getHeight())));
             subList.add(tileList.get(random));
             tileList.remove(random);
             
         }
         tileList = subList;
         System.out.println("Randomized");
-        return;
     }
 
     public boolean isTouching(int x, int y, Tile t){
-        if ((x >= t.getX() && x < (t.getX() + t.getWidth())) && (y >= t.getY() && y < (t.getY() + t.getHeight()))){
+        if ((x >= t.getX() && x < (t.getX() + t.getWidth())) &&
+         (y >= t.getY() && y < (t.getY() + t.getHeight()))){
             return true;
         }
 
         else{return false;}
     }
-
 }
 
 
