@@ -21,7 +21,6 @@ class TileManager {
                 save = tileList.get(i);
                 tileList.remove(i);
                 tileList.add(save);
-                System.out.println(tileList.toString());
                 
                 
                 return;
@@ -72,7 +71,6 @@ class TileManager {
             
         }
         tileList = subList;
-        System.out.println("Randomized");
     }
 
     public boolean isTouching(int x, int y, Tile t){
